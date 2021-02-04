@@ -32,3 +32,45 @@ btnTinh.addEventListener("click", function (e) {
     //B3 : in kết quả
     document.getElementById("txtKetQua").innerHTML = "Chu vi hình chữ nhật: " + chuVi + "<br>" + "Diện tích hình chữ nhật " + dienTich;
 })
+
+
+
+
+/* 
+Khối 1: số có 2 chữ số 
+
+Khối 2: 
+_B1: tạo biến chứa số có 2 chữ số (n)
+_B2: tạo biến chứa số hàng chục (chuc), số hàng đơn vị (donVi) 
+_B3: lấy số hàng chục
+Lấy phần nguyên tròn trong phép toán n/10 
+chuc = Math.floor(n/10)
+_B4: lấy số hàng đơn vị
+Lấy phần dư trong phép toán n%10 
+donVi = Math.floor(n%10)
+
+Khối 3: in kết quả
+_ Tổng của 2 ký số
+
+*/
+
+btnTinhSo.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    //B1 : tạo biến
+    var n = parseFloat(document.getElementById("inputSo").value);
+    var donVi = 0;
+    var chuc = 0;
+
+    //B2: 
+    // Lấy giá trị hàng chục
+    chuc = Math.floor(n / 10);
+    // Lấy giá trị hàng đơn vị
+    donVi = Math.floor(n % 10);
+    //Tính tổng 2 ký số
+    var tong = chuc + donVi;
+
+    //B3 : in kết quả
+    var output = document.getElementById("txtTong");
+    output.innerHTML = "Số có 2 chữ số: " + n + "<br>" + "Số hàng chục: " + chuc + "<br>" + "Số hàng đơn vị: " + donVi + "<br>" + "Tổng 2 ký số: " + tong;
+})
